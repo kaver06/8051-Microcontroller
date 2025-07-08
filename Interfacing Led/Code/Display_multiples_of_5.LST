@@ -1,0 +1,49 @@
+C51 COMPILER V8.12   DISPLAY_MULTIPLES_OF_5                                                03/23/2025 14:54:00 PAGE 1   
+
+
+C51 COMPILER V8.12, COMPILATION OF MODULE DISPLAY_MULTIPLES_OF_5
+OBJECT MODULE PLACED IN Display_multiples_of_5.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE Display_multiples_of_5.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <REGX51.h>
+   2          
+   3          #define LED_PORT P2
+   4          
+   5          void Delay(unsigned char ms)
+   6                  {
+   7   1              unsigned int i;
+   8   1              unsigned char j;
+   9   1              for (i = 0; i < 1275; i++)
+  10   1              for(j = 0; j < ms; j++);
+  11   1      }
+  12          void main()
+  13          {
+  14   1              unsigned int count;
+  15   1              unsigned int product;
+  16   1              LED_PORT = 0x00;
+  17   1              while(1)
+  18   1              {
+  19   2                      for(count = 0x01; count <= 0x0A; count++)
+  20   2                      {
+  21   3                              product=0x5*count;
+  22   3                              LED_PORT = ~product;
+  23   3                              Delay(100);
+  24   3                      }
+  25   2              }
+  26   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     69    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

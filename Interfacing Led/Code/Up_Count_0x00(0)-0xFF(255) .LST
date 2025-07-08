@@ -1,0 +1,48 @@
+C51 COMPILER V8.12   UP_COUNT_0X00_0__0XFF_255__                                           03/23/2025 14:40:06 PAGE 1   
+
+
+C51 COMPILER V8.12, COMPILATION OF MODULE UP_COUNT_0X00_0__0XFF_255__
+OBJECT MODULE PLACED IN Up_Count_0x00(0)-0xFF(255) .OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE Up_Count_0x00(0)-0xFF(255) .c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <REGX51.h>
+   2          
+   3          #define LED_PORT P2
+   4          
+   5          void Delay(unsigned char ms)
+   6          {
+   7   1              unsigned int i;
+   8   1              unsigned char j;
+   9   1              for (i = 0; i < 1275; i++)
+  10   1              for(j = 0; j < ms; j++);
+  11   1      }
+  12          void main()
+  13          {
+  14   1              unsigned int count;
+  15   1              LED_PORT = 0x00;
+  16   1      
+  17   1              while(1)
+  18   1              {
+  19   2                      for(count = 0x00; count <= 0xFF; count++)
+  20   2                      {
+  21   3                              LED_PORT = ~count;
+  22   3                              Delay(100);
+  23   3                      }
+  24   2              }
+  25   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     55    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

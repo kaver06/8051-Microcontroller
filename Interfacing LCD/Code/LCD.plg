@@ -1,0 +1,42 @@
+<html>
+<body>
+<pre>
+<h1>µVision3 Build Log</h1>
+<h2>Project:</h2>
+C:\Users\Admin\OneDrive\Desktop\C_files\8051\Interfacing LCD\Code\LCD.uv2
+Project File Date:  03/23/2025
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling Name_scrolling.c...
+NAME_SCROLLING.C(63): error C141: syntax error near 'i'
+Target not created
+Build target 'Target 1'
+compiling Name_scrolling.c...
+NAME_SCROLLING.C(63): error C141: syntax error near 'i'
+Target not created
+Build target 'Target 1'
+compiling Name_scrolling.c...
+NAME_SCROLLING.C(63): error C141: syntax error near 'i'
+Target not created
+Build target 'Target 1'
+compiling Name_scrolling.c...
+linking...
+Program Size: data=16.0 xdata=0 code=261
+creating hex file from "LCD"...
+"LCD" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling Name_scrolling.c...
+linking...
+Program Size: data=16.0 xdata=0 code=261
+creating hex file from "LCD"...
+"LCD" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling Display_sqrt_bw_range.c...
+linking...
+Program Size: data=90.1 xdata=0 code=2997
+creating hex file from "LCD"...
+"LCD" - 0 Error(s), 0 Warning(s).
+</pre>
+</body>
+</html>

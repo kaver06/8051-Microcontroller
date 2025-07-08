@@ -1,0 +1,96 @@
+C51 COMPILER V8.12   DISPLAY_UP_COUNT                                                      03/23/2025 19:54:35 PAGE 1   
+
+
+C51 COMPILER V8.12, COMPILATION OF MODULE DISPLAY_UP_COUNT
+OBJECT MODULE PLACED IN Display_up_Count.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE Display_up_Count.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <REGX51.h>
+   2          
+   3          #define LCDPORT P3
+   4          #define COMMAND 0x01
+   5          #define CHARACTER 0x02
+   6          
+   7          sbit RS = P2^0;
+   8          sbit RW = P2^1;
+   9          sbit E = P2^2;
+  10          
+  11          void Delay(unsigned char ms)
+  12          {
+  13   1              unsigned char i;
+  14   1              unsigned int j;
+  15   1              for (i = 0; i < ms; i++)
+  16   1               for(j = 0; j < 1275; j++);
+  17   1      }
+  18          void SendData(unsigned char dat, unsigned char type)
+  19          {
+  20   1              if(type == COMMAND)
+  21   1               RS = 0;
+  22   1              else if(type == CHARACTER)
+  23   1               RS = 1;
+  24   1               RW = 0;
+  25   1               E = 1;
+  26   1              
+  27   1               LCDPORT = dat;
+  28   1              
+  29   1               E = 0;
+  30   1               Delay(10);
+  31   1               E = 1;
+  32   1      }
+  33          void WriteString(unsigned char *str)
+  34          {
+  35   1       unsigned int i = 0;
+  36   1       while(str[i] != '\0')
+  37   1       {
+  38   2               SendData(str[i], CHARACTER);
+  39   2              i++;
+  40   2       }
+  41   1      }
+  42          void InitializeLCD()
+  43          {
+  44   1       SendData(0x38, COMMAND);
+  45   1       SendData(0x0F, COMMAND);
+  46   1       SendData(0x06, COMMAND);
+  47   1       SendData(0x01, COMMAND);
+  48   1       SendData(0x80, COMMAND);
+  49   1      }
+  50          void main()
+  51          {
+  52   1       unsigned char count;
+  53   1      
+  54   1       LCDPORT = 0x00;
+  55   1      
+C51 COMPILER V8.12   DISPLAY_UP_COUNT                                                      03/23/2025 19:54:35 PAGE 2   
+
+  56   1       RS = 0;
+  57   1       RW = 0;
+  58   1       E = 0;
+  59   1       InitializeLCD();
+  60   1       SendData(0x83, COMMAND);
+  61   1       while(1)
+  62   1       {
+  63   2              for(count = 0; count < 10; count++)
+  64   2               {
+  65   3                       SendData(count + '0', CHARACTER);
+  66   3                       Delay(250);
+  67   3                       SendData(0x01, COMMAND);
+  68   3                       SendData(0x83, COMMAND);
+  69   3               }
+  70   2       }
+  71   1      } 
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    188    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       5
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

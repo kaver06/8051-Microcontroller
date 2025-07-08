@@ -1,0 +1,52 @@
+C51 COMPILER V8.12   PATTERN_DISPLAY_EXAMPLE1                                              03/23/2025 15:35:22 PAGE 1   
+
+
+C51 COMPILER V8.12, COMPILATION OF MODULE PATTERN_DISPLAY_EXAMPLE1
+OBJECT MODULE PLACED IN Pattern_display_example1.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE Pattern_display_example1.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <REGX51.h>
+   2          
+   3          #define LED_PORT P2
+   4          
+   5          void delay(unsigned char ms)
+   6                  {
+   7   1              unsigned int i;
+   8   1              unsigned char j;
+   9   1              for (i = 0; i < 1275; i++)
+  10   1              for(j = 0; j < ms; j++);
+  11   1      }
+  12          void main()
+  13          {
+  14   1              unsigned int count;
+  15   1              unsigned int result;
+  16   1              int i;
+  17   1              while(1)
+  18   1              {       result=1;
+  19   2                      LED_PORT=~result;
+  20   2                      delay(100);
+  21   2                      for (i= 0x00; i <= 0x08; i++) 
+  22   2                      {
+  23   3                      result *= 2;
+  24   3                              LED_PORT=~result;
+  25   3                              delay(100);
+  26   3                      }
+  27   2              }
+  28   1      } 
+*** WARNING C280 IN LINE 14 OF PATTERN_DISPLAY_EXAMPLE1.C: 'count': unreferenced local variable
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     69    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       2
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)
