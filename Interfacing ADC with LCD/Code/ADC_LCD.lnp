@@ -1,0 +1,4 @@
+"globals.obj",
+"lcd.obj",
+"main.obj" 
+TO "ADC_LCD" 

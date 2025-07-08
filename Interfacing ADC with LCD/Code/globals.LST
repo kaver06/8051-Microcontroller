@@ -1,0 +1,31 @@
+C51 COMPILER V8.12   GLOBALS                                                               03/23/2025 22:22:52 PAGE 1   
+
+
+C51 COMPILER V8.12, COMPILATION OF MODULE GLOBALS
+OBJECT MODULE PLACED IN globals.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE globals.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          void InitializeLCD(void);
+   2          void WriteString(unsigned char *str);
+   3          void delay(unsigned char ms);
+   4          void adc_conversion();
+   5          void read_adc();
+   6          void SendData(unsigned char dat);
+   7          void SendCommand(unsigned char cmd);
+   8          void display(void);
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   ----    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

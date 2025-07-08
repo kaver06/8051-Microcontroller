@@ -1,0 +1,102 @@
+BL51 BANKED LINKER/LOCATER V6.11                                                        04/10/2025  20:42:48  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.11, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE using_74ls47.obj TO Using_74ls74
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  using_74ls47.obj (USING_74LS47)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  Using_74ls74 (USING_74LS47)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     0025H     UNIT         ?PR?MAIN?USING_74LS47
+            CODE    0825H     0019H     UNIT         ?PR?_DELAY?USING_74LS47
+            CODE    083EH     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   Using_74ls74 (USING_74LS47)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?USING_74LS47
+
+?PR?MAIN?USING_74LS47
+  +--> ?PR?_DELAY?USING_74LS47
+
+
+
+SYMBOL TABLE OF MODULE:  Using_74ls74 (USING_74LS47)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        USING_74LS47
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  B:00B0H.0       PUBLIC        LT
+  C:0800H         PUBLIC        main
+  C:0825H         PUBLIC        _Delay
+  -------         PROC          _DELAY
+BL51 BANKED LINKER/LOCATER V6.11                                                      04/10/2025  20:42:48  PAGE 2
+
+
+  D:0007H         SYMBOL        ms
+  -------         DO            
+  D:0006H         SYMBOL        i
+  D:0004H         SYMBOL        j
+  -------         ENDDO         
+  C:0825H         LINE#         5
+  C:0825H         LINE#         6
+  C:0825H         LINE#         9
+  C:082CH         LINE#         10
+  C:083DH         LINE#         11
+  -------         ENDPROC       _DELAY
+  -------         PROC          MAIN
+  -------         DO            
+  D:0002H         SYMBOL        count
+  -------         ENDDO         
+  C:0800H         LINE#         12
+  C:0800H         LINE#         13
+  C:0800H         LINE#         16
+  C:0803H         LINE#         17
+  C:0805H         LINE#         19
+  C:0807H         LINE#         20
+  C:080CH         LINE#         21
+  C:080EH         LINE#         23
+  C:080EH         LINE#         24
+  C:080EH         LINE#         25
+  C:0811H         LINE#         26
+  C:0811H         LINE#         27
+  C:0813H         LINE#         28
+  C:0818H         LINE#         29
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        USING_74LS47
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 003EH BYTE ( 3%) *
+******************************************************************************
+
+Program Size: data=9.0 xdata=0 code=77
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

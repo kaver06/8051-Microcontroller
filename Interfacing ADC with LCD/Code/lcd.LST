@@ -1,0 +1,82 @@
+C51 COMPILER V8.12   LCD                                                                   03/23/2025 22:22:52 PAGE 1   
+
+
+C51 COMPILER V8.12, COMPILATION OF MODULE LCD
+OBJECT MODULE PLACED IN lcd.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE lcd.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <reg52.h>
+   2          #define LCDPORT P2
+   3          
+   4          sbit RS = P3^5;
+   5          sbit RW = P3^6;
+   6          sbit EN = P3^7;
+   7          
+   8          void delay(unsigned char ms)
+   9          {
+  10   1              unsigned char i;
+  11   1              unsigned int j;
+  12   1              for (i = 0; i < ms; i++)
+  13   1                      for(j = 0; j < 1275; j++);
+  14   1      }
+  15          void SendData(unsigned char dat)
+  16          {
+  17   1              RS = 1;
+  18   1              RW = 0;
+  19   1              EN = 1;
+  20   1              LCDPORT = dat; 
+  21   1              EN = 0;
+  22   1              delay(10);
+  23   1              EN = 1;
+  24   1      }
+  25          void SendCommand(unsigned char cmd)
+  26          {
+  27   1              RS = 0;
+  28   1              RW = 0;
+  29   1              EN = 1;
+  30   1              LCDPORT = cmd;
+  31   1              EN = 0;
+  32   1              delay(10);
+  33   1              EN = 1;
+  34   1      }
+  35          void WriteString(unsigned char *str)
+  36          {
+  37   1              unsigned int i = 0;
+  38   1              while(str[i] != '\0')
+  39   1              {
+  40   2                      SendData(str[i]);
+  41   2                      i++;
+  42   2              }
+  43   1      }
+  44          
+  45          void InitializeLCD(void)
+  46          {
+  47   1              LCDPORT = 0x00;
+  48   1      
+  49   1              RS = 0;
+  50   1              RW = 0;
+  51   1              EN = 0;
+  52   1              SendCommand(0x38); 
+  53   1              SendCommand(0x0C); 
+  54   1              SendCommand(0x01); 
+  55   1              SendCommand(0x06);
+C51 COMPILER V8.12   LCD                                                                   03/23/2025 22:22:52 PAGE 2   
+
+  56   1              SendCommand(0x80); 
+  57   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    128    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       5
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

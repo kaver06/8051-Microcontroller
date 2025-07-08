@@ -1,0 +1,9 @@
+Build target 'Target 1'
+compiling using_2_displays.c...
+linking...
+Program Size: data=9.0 xdata=0 code=117
+creating hex file from "using_2_displays"...
+"using_2_displays" - 0 Error(s), 0 Warning(s).
+</pre>
+</body>
+</html>

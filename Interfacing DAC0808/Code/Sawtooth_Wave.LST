@@ -1,0 +1,40 @@
+C51 COMPILER V8.12   SAWTOOTH_WAVE                                                         03/23/2025 17:19:09 PAGE 1   
+
+
+C51 COMPILER V8.12, COMPILATION OF MODULE SAWTOOTH_WAVE
+OBJECT MODULE PLACED IN Sawtooth_Wave.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE Sawtooth_Wave.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <REGX51.h>
+   2          
+   3          #define DACPORT P2
+   4          
+   5          
+   6          void main()
+   7          {
+   8   1              int val = 0;
+   9   1              DACPORT = 0x00;
+  10   1              while(1)
+  11   1              {
+  12   2               for(val = 0; val < 256; val++)
+  13   2               {
+  14   3                       DACPORT = (unsigned char)val;
+  15   3               }
+  16   2              }
+  17   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     23    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

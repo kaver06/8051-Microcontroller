@@ -1,0 +1,43 @@
+C51 COMPILER V8.12   TRIANGULAR_WAVE                                                       03/23/2025 17:22:33 PAGE 1   
+
+
+C51 COMPILER V8.12, COMPILATION OF MODULE TRIANGULAR_WAVE
+OBJECT MODULE PLACED IN Triangular_Wave.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE Triangular_Wave.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <REGX51.h>
+   2          
+   3          #define DACPORT P2
+   4          
+   5          void main()
+   6          {
+   7   1              int val = 0;
+   8   1              DACPORT = 0x00;
+   9   1              while(1)
+  10   1              {
+  11   2               for(val = 0; val < 256; val++)
+  12   2               {
+  13   3                       DACPORT = (unsigned char)val;
+  14   3               }
+  15   2               for(val = 255; val > 0; val--)
+  16   2               {
+  17   3                       DACPORT = (unsigned char)val;
+  18   3               }
+  19   2              }
+  20   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     45    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

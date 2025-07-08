@@ -1,0 +1,54 @@
+C51 COMPILER V8.12   USING_74LS47                                                          04/10/2025 20:42:48 PAGE 1   
+
+
+C51 COMPILER V8.12, COMPILATION OF MODULE USING_74LS47
+OBJECT MODULE PLACED IN using_74ls47.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE using_74ls47.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <REGX51.h>
+   2          
+   3          sbit LT = P3^0;
+   4          
+   5          void Delay(unsigned char ms)
+   6          {
+   7   1              unsigned char i;
+   8   1              unsigned int j;
+   9   1              for (i=0; i < ms; i++)
+  10   1              for (j=0; j < 1275;j++);
+  11   1      }
+  12          void main()
+  13          {
+  14   1              int count;
+  15   1      
+  16   1              P2 =0x00;
+  17   1              LT = 0;
+  18   1      
+  19   1              LT = 0;
+  20   1              Delay(1000) ;
+  21   1              LT = 1;
+  22   1      
+  23   1              while(1)
+  24   1              {
+  25   2                      for(count =0; count < 10; count++)
+  26   2                      {
+  27   3                              P2 = count;
+  28   3                              Delay(100);
+  29   3                      }
+  30   2              }
+  31   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     62    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

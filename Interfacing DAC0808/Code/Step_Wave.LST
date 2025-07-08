@@ -1,0 +1,53 @@
+C51 COMPILER V8.12   STEP_WAVE                                                             03/23/2025 20:40:28 PAGE 1   
+
+
+C51 COMPILER V8.12, COMPILATION OF MODULE STEP_WAVE
+OBJECT MODULE PLACED IN Step_Wave.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE Step_Wave.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <REGX51.h>
+   2          
+   3          #define DACPORT P2
+   4          
+   5          void delay(unsigned int ms)
+   6          {
+   7   1              int i,j;
+   8   1              for(i=0;i<ms;i++)
+   9   1                      for(j=0;j<1275;j++);
+  10   1      }
+  11          
+  12          void main()
+  13          {
+  14   1              int new_val;
+  15   1              int val;
+  16   1              DACPORT = 0x00;
+  17   1      
+  18   1              while(1)
+  19   1              {
+  20   2                      for(val = 0; val < 256;val+=42.6)
+  21   2                       {
+  22   3                               DACPORT =val ;
+  23   3                               new_val=val;
+  24   3                       }
+  25   2                       for(val = new_val; val >=0; val-=42.6)
+  26   2                       {
+  27   3                               DACPORT =val ;
+  28   3                       }
+  29   2              }
+  30   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    114    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       2
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,114 @@
+BL51 BANKED LINKER/LOCATER V6.11                                                        04/10/2025  21:00:56  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.11, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE using_2_displays.obj TO using_2_displays
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  using_2_displays.obj (USING_2_DISPLAYS)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  using_2_displays (USING_2_DISPLAYS)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     003DH     UNIT         ?PR?MAIN?USING_2_DISPLAYS
+            CODE    083DH     0019H     UNIT         ?PR?_DELAY?USING_2_DISPLAYS
+            CODE    0856H     0010H     UNIT         ?CO?USING_2_DISPLAYS
+            CODE    0866H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   using_2_displays (USING_2_DISPLAYS)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?USING_2_DISPLAYS
+
+?PR?MAIN?USING_2_DISPLAYS
+  +--> ?CO?USING_2_DISPLAYS
+  +--> ?PR?_DELAY?USING_2_DISPLAYS
+
+
+
+SYMBOL TABLE OF MODULE:  using_2_displays (USING_2_DISPLAYS)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        USING_2_DISPLAYS
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  C:0800H         PUBLIC        main
+  C:0856H         PUBLIC        displayCodes
+BL51 BANKED LINKER/LOCATER V6.11                                                      04/10/2025  21:00:56  PAGE 2
+
+
+  C:083DH         PUBLIC        _Delay
+  B:00B0H.0       PUBLIC        unit1
+  B:00B0H.1       PUBLIC        unit2
+  -------         PROC          _DELAY
+  D:0007H         SYMBOL        ms
+  -------         DO            
+  D:0006H         SYMBOL        i
+  D:0004H         SYMBOL        j
+  -------         ENDDO         
+  C:083DH         LINE#         13
+  C:083DH         LINE#         14
+  C:083DH         LINE#         17
+  C:0844H         LINE#         18
+  C:0855H         LINE#         19
+  -------         ENDPROC       _DELAY
+  -------         PROC          MAIN
+  -------         DO            
+  D:0003H         SYMBOL        oddNumber
+  D:0002H         SYMBOL        i
+  -------         ENDDO         
+  C:0800H         LINE#         21
+  C:0800H         LINE#         22
+  C:0800H         LINE#         25
+  C:0803H         LINE#         26
+  C:0805H         LINE#         27
+  C:0807H         LINE#         29
+  C:0807H         LINE#         30
+  C:0807H         LINE#         31
+  C:080FH         LINE#         32
+  C:080FH         LINE#         33
+  C:0811H         LINE#         34
+  C:0811H         LINE#         35
+  C:0813H         LINE#         36
+  C:081CH         LINE#         37
+  C:081EH         LINE#         38
+  C:0823H         LINE#         40
+  C:0825H         LINE#         41
+  C:082EH         LINE#         42
+  C:0830H         LINE#         43
+  C:0835H         LINE#         44
+  C:0839H         LINE#         45
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        USING_2_DISPLAYS
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0066H BYTE ( 4%) *
+******************************************************************************
+
+Program Size: data=9.0 xdata=0 code=117
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

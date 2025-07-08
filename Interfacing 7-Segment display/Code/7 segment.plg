@@ -1,0 +1,30 @@
+<html>
+<body>
+<pre>
+<h1>µVision3 Build Log</h1>
+<h2>Project:</h2>
+C:\Users\Admin\OneDrive\Desktop\C_files\8051\Interfacing 7-Segment display\Code\7 segment.uv2
+Project File Date:  03/23/2025
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling Display 0-F.c...
+linking...
+Program Size: data=25.0 xdata=0 code=218
+creating hex file from "7 segment"...
+"7 segment" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling using_74ls47.c...
+USING_74LS47.C(3): error C202: 'P3AO': undefined identifier
+USING_74LS47.C(16): error C202: 'p2': undefined identifier
+USING_74LS47.C(17): error C202: 'LT': undefined identifier
+USING_74LS47.C(19): error C202: 'LT': undefined identifier
+USING_74LS47.C(21): error C202: 'LT': undefined identifier
+USING_74LS47.C(27): error C202: 'p2': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling using_74ls47.c...
+linking...
+Program Size: data=9.0 xdata=0 code=77
+creating hex file from "7 segment"...
+"7 segment" - 0 Error(s), 0 Warning(s).

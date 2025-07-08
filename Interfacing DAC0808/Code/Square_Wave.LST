@@ -1,0 +1,43 @@
+C51 COMPILER V8.12   SQUARE_WAVE                                                           03/23/2025 17:11:12 PAGE 1   
+
+
+C51 COMPILER V8.12, COMPILATION OF MODULE SQUARE_WAVE
+OBJECT MODULE PLACED IN Square_Wave.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE Square_Wave.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <REGX51.h>
+   2          
+   3          #define DACPORT P2
+   4          
+   5          void Delay(unsigned char ms)
+   6          {
+   7   1              unsigned char i;
+   8   1              unsigned int j;
+   9   1              for (i = 0; i < ms; i++)
+  10   1               for(j = 0; j < 1275; j++);
+  11   1      }
+  12          void main()
+  13          {
+  14   1              DACPORT = 0x00;
+  15   1              while(1)
+  16   1              {
+  17   2               DACPORT = ~DACPORT;
+  18   2               Delay(1);
+  19   2              }
+  20   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     38    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

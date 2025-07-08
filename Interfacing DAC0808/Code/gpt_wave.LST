@@ -1,0 +1,51 @@
+C51 COMPILER V8.12   GPT_WAVE                                                              03/23/2025 18:42:38 PAGE 1   
+
+
+C51 COMPILER V8.12, COMPILATION OF MODULE GPT_WAVE
+OBJECT MODULE PLACED IN gpt_wave.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE gpt_wave.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <REGX51.h>
+   2          
+   3          #define DACPORT P2
+   4          
+   5          void delay(unsigned int ms)
+   6          {
+   7   1              int i,j;
+   8   1              for(i=0;i<ms;i++)
+   9   1                      for(j=0;j<1275;j++);
+  10   1      }
+  11          
+  12          void main()
+  13          {
+  14   1              unsigned char step_values[] = {0x00, 0x10, 0x20, 0x30, 0x40, 0x50, 0x60, 0x70, 0x80};
+  15   1              int val;
+  16   1              DACPORT = 0x00;
+  17   1              while(1)
+  18   1              {
+  19   2                      /*for(val = 0; val < 10; val++)
+  20   2                       {
+  21   2                               DACPORT = step_values[val];
+  22   2                       }*/
+  23   2                      for(val = 8; val < 0; val--)
+  24   2                       {
+  25   3                               DACPORT = step_values[val];
+  26   3                       }
+  27   2              }
+  28   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     80    ----
+   CONSTANT SIZE    =      9    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       9
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

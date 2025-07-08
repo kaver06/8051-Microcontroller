@@ -1,0 +1,50 @@
+C51 COMPILER V8.12   DISPLAY_0_F                                                           04/10/2025 20:43:20 PAGE 1   
+
+
+C51 COMPILER V8.12, COMPILATION OF MODULE DISPLAY_0_F
+OBJECT MODULE PLACED IN Display 0-F.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE Display 0-F.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <REGX51.h>
+   2          
+   3          unsigned char displayCodes [16] = {     0x3F,0x06,0x5B,0x4F,
+   4                                                                                  0x66,0x6D,0x7D,0x07,
+   5                                                                                  0x7F,0x67,0x77,0x7c, 
+   6                                                                                  0x39,0x5E,0x79,0x71};
+   7          void Delay(unsigned char ms)
+   8          {
+   9   1              unsigned char i;
+  10   1              unsigned int j;
+  11   1              for (i = 0; i < ms; i++)
+  12   1                      for(j=0; j < 1275; j++);
+  13   1      }
+  14           
+  15          void main()
+  16          {
+  17   1              int count;
+  18   1              P2 = 0x00;
+  19   1              while (1)
+  20   1              {
+  21   2                      for(count = 0; count < 16; count++)
+  22   2                      {
+  23   3                              P2=displayCodes[count];
+  24   3                              Delay(100);
+  25   3                      }
+  26   2              }
+  27   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     56    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     16    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
