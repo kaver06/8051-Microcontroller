@@ -3,6 +3,7 @@
 This repository contains a collection of basic projects using the 8051 microcontroller. All projects are developed in Keil uVision and simulated in Proteus. Each folder includes source code, simulation files, and documentation to help beginners understand 8051 programming and hardware interfacing.
 
 Projects Included:
+```
 ->Interfacing 7-Segment Display
   Display numbers and characters using a 7-segment display with the 8051.
 ->Interfacing ADC with LCD
@@ -17,7 +18,7 @@ Projects Included:
   Basic LED interfacing and control using the 8051 microcontroller.
 ->Interfacing Stepper Motor
   Control the direction and speed of a stepper motor.
-
+```
 Getting Started
 Open the project folder in Keil uVision 3 to view/edit the source code.
 Use the provided Proteus files to simulate the hardware setup.
